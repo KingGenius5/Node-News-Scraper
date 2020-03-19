@@ -1,0 +1,23 @@
+{
+  "name": "News-Scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KingGenius5/Node-News-Scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KingGenius5/Node-News-Scraper/issues"
+  },
+  "homepage": "https://github.com/KingGenius5/Node-News-Scraper#readme",
+  "dependencies": {
+    "puppeteer": "^2.1.1"
+  }
+}
