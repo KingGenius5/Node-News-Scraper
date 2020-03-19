@@ -7,5 +7,10 @@ async function scrapeArticle(url) {
 
   //to start up the browser, we need to wait for puppoeteer to launch the browser
   const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  page.goto(url);
 
 }
+
+
+scrapeArticle('https://www.washingtonpost.com/');
