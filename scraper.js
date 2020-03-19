@@ -14,7 +14,13 @@ async function scrapeArticle(url) {
   //page is the page we opened, the $x is a puppeteer selector which allows us to select items
   //by xpath; which is a way to naviagate the page (similar to JQuery or native JS libs) but 
   //in a syntax that works better for webscrapers
-  const [el] = await page.$x('//*[@id="f74tgM1Y06gGTr"]');
+  const [el] = await page.$x('//*[@id="fX27Wy1Y06gGTr"]/div/div/h1/a');
+  const txt = await el.getProperty('textContent');
+  const rawTxt = await txt.jsonValue();
+
+  console.log({rawTxt});
+
+  browser.close();
 
 }
 
