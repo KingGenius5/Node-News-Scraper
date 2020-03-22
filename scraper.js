@@ -12,15 +12,27 @@ async function scrapeArticle(url) {
 
   //element
   //page is the page we opened, the $x is a puppeteer selector which allows us to select items
-  //by xpath; which is a way to naviagate the page (similar to JQuery or native JS libs) but 
-  //in a syntax that works better for webscrapers
-  const [el] = await page.$x('//*[@id="story"]/section/div[3]/ul');
-  const txt = await el.getProperty('textContent');
-  const rawTxt = await txt.jsonValue();
+  //by xpath; which is a way to naviagate the page (similar to JQuery or native JS libs) but in a syntax that works better for webscrapers
+  const [title] = await page.$x('/html/body/div[1]/div/div/div[2]/main/div/article/header/div[3]/h1/span[1]');
+  const [latest] = await page.$x('//*[@id="story"]/header/div[4]');
+  const [summary] = await page.$x('//*[@id="story"]/section/div[3]');
 
-  console.log({rawTxt});
 
-  browser.close();
+  const titleTxt = await title.getProperty('textContent');
+  const rawTitle = await titleTxt.jsonValue();
+
+  const latestTxt = await latest.getProperty('textContent');
+  const rawLatest = await latestTxt.jsonValue();
+
+  const summaryTxt = await summary.getProperty('textContent');
+  const rawSummary = await summaryTxt.jsonValue();
+
+
+  console.log({rawTitle});
+  console.log({rawLatest});
+  console.log({rawSummary});
+
+  await browser.close();
 
 }
 
