@@ -13,9 +13,9 @@ async function scrapeArticle(url) {
   //element
   //page is the page we opened, the $x is a puppeteer selector which allows us to select items
   //by xpath; which is a way to naviagate the page (similar to JQuery or native JS libs) but in a syntax that works better for webscrapers
-  const [title] = await page.$x('/html/body/div[1]/div/div/div[2]/main/div/article/header/div[3]/h1/span[1]');
-  const [latest] = await page.$x('//*[@id="story"]/header/div[4]');
-  const [summary] = await page.$x('//*[@id="story"]/section/div[3]');
+  const [title] = await page.$x('//*[@id="collection-coronavirus"]/div[1]/div/div/h1');
+  const [latest] = await page.$x('//*[@id="collection-coronavirus"]/section/div/div');
+  const [summary] = await page.$x('//*[@id="collection-coronavirus"]/section/section[1]/div[2]/div/div/ul');
 
 
   const titleTxt = await title.getProperty('textContent');
@@ -37,4 +37,4 @@ async function scrapeArticle(url) {
 }
 
 
-scrapeArticle('https://www.nytimes.com/2020/03/21/world/coronavirus-updates-usa-world.html');
+scrapeArticle('https://www.nytimes.com/news-event/coronavirus');
