@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
 
     // Launching the Puppeteer controlled headless browser and navigate to the NYT website
     puppeteer.launch().then(async function(browser) {
-        const browser = await puppeteer.launch({
+        browser = await puppeteer.launch({
             'args' : [
               '--no-sandbox',
               '--disable-setuid-sandbox'
