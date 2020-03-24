@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer'); // Adding Puppeteer
 app.get('/', function(req, res) {
 
     // Launching the Puppeteer controlled headless browser and navigate to the NYT website
-    puppeteer.launch().then(async function(browser) {
+    puppeteer.launch({headless: false}).then(async function(browser) {
         const page = await browser.newPage();
         await page.goto('https://www.nytimes.com/news-event/coronavirus');
 
