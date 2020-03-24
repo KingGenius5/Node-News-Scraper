@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
         await page.goto('https://www.nytimes.com/news-event/coronavirus');
 
         // Targeting the DOM Nodes that contain the updates tidbits
-        const summaryNames = await page.$$eval('#storylines-hub-100000007048604 > div > ul', function(summaries) {
+        const summaryNames = await page.$$eval('#collection-coronavirus > section > section:nth-child(2) > div:nth-child(2)', function(summaries) {
         // Mapping each update name to an array
             return summaries.map(function(summary) {
           return summary.innerText.split('\n')
