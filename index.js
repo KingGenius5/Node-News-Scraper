@@ -28,6 +28,6 @@ app.get('/', function(req, res) {
 });
 
 // Making Express listen on port 7000
-app.listen(7000, function() {
-  console.log('Running on port 7000.');
+app.listen(process.env.PORT || 5000, function() {
+  console.log('http://127.0.0.1:5000/.');
 });
