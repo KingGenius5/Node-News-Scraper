@@ -2,23 +2,28 @@
   "name": "News-Scraper",
   "version": "1.0.0",
   "description": "",
-  "main": "scraper.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index"
+
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KingGenius5/Node-News-Scraper.git"
+    "url": "git+https://github.com/the-corona-wiki/Node-News-Scraper.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KingGenius5/Node-News-Scraper/issues"
+    "url": "https://github.com/the-corona-wiki/Node-News-Scraper/issues"
   },
-  "homepage": "https://github.com/KingGenius5/Node-News-Scraper#readme",
+  "homepage": "https://github.com/the-corona-wiki/Node-News-Scraper#readme",
   "dependencies": {
-    "puppeteer": "^2.1.1",
-    "puppeteer-extra-plugin-stealth": "^2.4.9"
+    "express": "^4.17.1",
+    "puppeteer": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
